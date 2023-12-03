@@ -61,7 +61,7 @@ app.post("/cookie", (req, res) => {
   const id = req.body.id;
   console.log("manito" + id);
   res.cookie("MANITO", id);
-  res.render("Cookie", { MANITO: id });
+  res.json({ MANITO: id });
 });
 
 app.post("/cookie_confirm", (req, res) => {
