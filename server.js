@@ -22,11 +22,11 @@ app.use(history());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.all("/*", function (req, res, next) {
-  res.header("https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
+// app.all("/*", function (req, res, next) {
+//   res.header("https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app", "*");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//   next();
+// });
 
 const port = 8080;
 const _path = path.join(__dirname, "./dist");
@@ -41,7 +41,7 @@ app.set("views", "./views");
 app.use(cookieParser());
 
 /*id_pwd confirm*/
-app.post("/api/id", (req, res) => {
+app.post("/id", (req, res) => {
   console.log(req.body.id);
   console.log(req.body.pwd);
   const id = req.body.id;
@@ -56,7 +56,7 @@ app.post("/api/id", (req, res) => {
 });
 
 /*cookie*/
-app.post("/api/cookie", (req, res) => {
+app.post("/cookie", (req, res) => {
   const id = req.body.id;
   console.log("manito" + id);
   res.cookie("MANITO", id);
@@ -297,14 +297,6 @@ app.post("/board_modal", (req, res) => {
     res.send(get);
     console.log(get);
   })();
-});
-
-app.get("/", (req, res) => {
-  res.send("Hello, Express");
-  console.log("connected");
-
-  // HTML 파일로 응답 가능
-  res.sendFile(path.join(__dirname, "/index.html"));
 });
 
 app.listen(port, () => {
