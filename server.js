@@ -36,7 +36,7 @@ app.set("views", "./views");
 app.use(cookieParser());
 
 /*id_pwd confirm*/
-app.post("id", async (req, res) => {
+app.post("/id", async (req, res) => {
   try {
     console.log(req.body);
     const id = req.body.id;
