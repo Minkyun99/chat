@@ -1,6 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-const target = "http://34.64.184.142:8080";
+const target = "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/";
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
