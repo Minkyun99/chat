@@ -37,20 +37,20 @@ export default {
     };
   },
 
-  mounted() {
-    this.cookie_read();
-  },
+  // mounted() {
+  //   this.cookie_read();
+  // },
 
   methods: {
-    async cookie_read() {
-      try {
-        const res = await axios.post("/cookie_confirm");
-        this.nick = res.data;
-        console.log(this.nick);
-      } catch (error) {
-        console.error("Error fetching nickname:", error);
-      }
-    },
+    // async cookie_read() {
+    //   try {
+    //     const res = await axios.post("/cookie_confirm");
+    //     this.nick = res.data;
+    //     console.log(this.nick);
+    //   } catch (error) {
+    //     console.error("Error fetching nickname:", error);
+    //   }
+    // },
 
     async send() {
       try {
