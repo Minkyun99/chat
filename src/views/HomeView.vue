@@ -50,15 +50,16 @@ export default {
           if (res.data == "1") {
             console.log(res.data);
             alert("당신은 저의 마니또가 맞습니다.");
-
             this.$router.push("/about");
           } else {
-            console.log("전송실패");
+            console.log("로그인 실패");
+            // Handle unsuccessful login (e.g., show an error message)
           }
+        })
+        .catch((error) => {
+          console.error("Error during login:", error);
+          // Handle the error (e.g., show an error message to the user)
         });
-      // axios.post("/cookie", {
-      //   id: this.id,
-      // });
     },
   },
 };

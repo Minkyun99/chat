@@ -42,10 +42,10 @@ app.use(cookieParser());
 /*id_pwd confirm*/
 app.post("/id", async (req, res) => {
   try {
-    console.log(req);
-    console.log(req.body.password);
+    console.log(req.body);
     const id = req.body.id;
     const pwd = req.body.password;
+
     if (id === "manito" && pwd === "manito1127") {
       res.send("1");
     } else {
@@ -57,20 +57,20 @@ app.post("/id", async (req, res) => {
   }
 });
 /*cookie*/
-// app.post("/cookie", (req, res) => {
-//   const id = req.body.id;
-//   console.log("manito" + id);
-//   res.cookie("MANITO", id);
-//   res.json({ MANITO: id });
-// });
+app.post("/cookie", (req, res) => {
+  const id = req.body.id;
+  console.log("manito" + id);
+  res.cookie("MANITO", id);
+  res.json({ MANITO: id });
+});
 
-// app.post("/cookie_confirm", (req, res) => {
-//   (async () => {
-//     const my_manito = req.cookies.MANITO;
-//     console.log(my_manito);
-//     res.send(my_manito);
-//   })();
-// });
+app.post("/cookie_confirm", (req, res) => {
+  (async () => {
+    const my_manito = req.cookies.MANITO;
+    console.log(my_manito);
+    res.send(my_manito);
+  })();
+});
 
 /*send_message*/
 app.post("/send_message", (req, res) => {
