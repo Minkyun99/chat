@@ -35,7 +35,7 @@ app.set("views", "./views");
 app.use(cookieParser());
 
 /*id_pwd confirm*/
-app.post(host + "/id", (req, res) => {
+app.post("/id", (req, res) => {
   console.log(req.body.id);
   console.log(req.body.pwd);
   const id = req.body.id;
@@ -50,14 +50,14 @@ app.post(host + "/id", (req, res) => {
 });
 
 /*cookie*/
-app.post(host + "/cookie", (req, res) => {
+app.post("/cookie", (req, res) => {
   const id = req.body.id;
   console.log("manito" + id);
   res.cookie("MANITO", id);
   res.render("Cookie", { MANITO: id });
 });
 
-app.post(host + "/cookie_confirm", (req, res) => {
+app.post("/cookie_confirm", (req, res) => {
   (async () => {
     const my_manito = req.cookies.MANITO;
     console.log(my_manito);
@@ -66,7 +66,7 @@ app.post(host + "/cookie_confirm", (req, res) => {
 });
 
 /*send_message*/
-app.post(host + "/send_message", (req, res) => {
+app.post("/send_message", (req, res) => {
   console.log(req.body.message);
   const message = req.body.message;
   if (message.length >= 1) {

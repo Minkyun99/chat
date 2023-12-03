@@ -41,24 +41,17 @@ export default {
 
   methods: {
     cookie_read: function () {
-      axios
-        .get(
-          "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/cookie_confirm"
-        )
-        .then((res) => {
-          this.nick = res.data;
-        });
+      axios.get("/cookie_confirm").then((res) => {
+        this.nick = res.data;
+      });
     },
 
     send: function () {
       console.log(this.send_message);
       axios
-        .post(
-          "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/cookie_confirmsend_message",
-          {
-            message: this.send_message,
-          }
-        )
+        .post("/send_message", {
+          message: this.send_message,
+        })
         .then((res) => {
           this.send_message = "";
           console.log(res);

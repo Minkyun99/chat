@@ -37,7 +37,7 @@ export default {
   methods: {
     login: function () {
       axios
-        .post("https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/id", {
+        .post("/id", {
           id: this.id,
           pwd: this.pwd,
         })
@@ -51,12 +51,9 @@ export default {
             console.log("전송실패");
           }
         });
-      axios.post(
-        "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/cookie",
-        {
-          id: this.id,
-        }
-      );
+      axios.post("/cookie", {
+        id: this.id,
+      });
     },
   },
 };
