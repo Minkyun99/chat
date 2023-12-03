@@ -42,7 +42,7 @@ export default {
   methods: {
     loginA: function () {
       axios
-        .post("/id", {
+        .post("https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/id", {
           id: this.id,
           password: this.password,
         })
@@ -64,7 +64,7 @@ export default {
 
     loginB: function () {
       axios
-        .post("/id", {
+        .post("https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/id", {
           id: this.id,
           password: this.password,
         })
