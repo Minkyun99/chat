@@ -16,7 +16,8 @@
     "vue": "^3.2.13",
     "vue-cookies": "^1.8.3",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "proxy": "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/:8080/"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

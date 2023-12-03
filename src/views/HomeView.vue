@@ -37,7 +37,7 @@ export default {
   methods: {
     login: function () {
       axios
-        .post("/api/id", {
+        .post("/id", {
           id: this.id,
           pwd: this.pwd,
         })
@@ -51,7 +51,8 @@ export default {
             console.log("전송실패");
           }
         });
-      axios.post("/api/cookie", {
+
+      axios.post("/cookie", {
         id: this.id,
       });
     },
