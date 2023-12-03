@@ -82,8 +82,6 @@ app.post("/send_message", (req, res) => {
   } else {
     res.send("1");
   }
-  // async () => {
-  // };
 });
 
 app.listen(port, () => {

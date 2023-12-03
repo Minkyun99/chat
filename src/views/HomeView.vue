@@ -16,12 +16,12 @@
           type="password"
           class="pwd"
           v-model="password"
-          @keyup.enter="login"
+          @keyup.enter="loginA"
         />
       </td>
       <tr>
         <td>
-          <button @click="login" class="login_button">로그인</button>
+          <button @click="loginB" class="login_button">로그인</button>
         </td>
       </tr>
     </table>
@@ -40,7 +40,29 @@ export default {
     };
   },
   methods: {
-    login: function () {
+    loginA: function () {
+      axios
+        .post("/id", {
+          id: this.id,
+          password: this.password,
+        })
+        .then((res) => {
+          if (res.data == "1") {
+            console.log(res.data);
+            alert("당신은 저의 마니또가 맞습니다.");
+            this.$router.push("/about");
+          } else {
+            console.log("로그인 실패");
+            // Handle unsuccessful login (e.g., show an error message)
+          }
+        })
+        .catch((error) => {
+          console.error("Error during login:", error);
+          // Handle the error (e.g., show an error message to the user)
+        });
+    },
+
+    loginB: function () {
       axios
         .post("/id", {
           id: this.id,
