@@ -12,11 +12,11 @@
         </td>
       </tr>
       <td>
-        <input type="pwd" class="pwd" v-model="pwd" @keyup.enter="login" />
+        <input type="pwd" class="pwd" v-model="password" @keyup.enter="login" />
       </td>
       <tr>
         <td>
-          <button @click="login" class="login_button">login</button>
+          <button @click="login" class="login_button">로그인</button>
         </td>
       </tr>
     </table>
