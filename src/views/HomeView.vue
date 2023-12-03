@@ -51,7 +51,6 @@ export default {
             console.log("전송실패");
           }
         });
-
       axios.post("/cookie", {
         id: this.id,
       });
