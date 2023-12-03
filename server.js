@@ -13,6 +13,7 @@ const request = require("request");
 // const Counter_Schema = require("./counter_db.cjs");
 // const Board_Schema = require("./board_db.js");
 const app = express();
+const host = "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/";
 
 const server = http.createServer(app);
 const io = new Server(server);
@@ -34,7 +35,7 @@ app.set("views", "./views");
 app.use(cookieParser());
 
 /*id_pwd confirm*/
-app.post("/id", (req, res) => {
+app.post("host/id", (req, res) => {
   console.log(req.body.id);
   console.log(req.body.pwd);
   const id = req.body.id;
@@ -49,14 +50,14 @@ app.post("/id", (req, res) => {
 });
 
 /*cookie*/
-app.post("/cookie", (req, res) => {
+app.post("host/cookie", (req, res) => {
   const id = req.body.id;
   console.log("manito" + id);
   res.cookie("MANITO", id);
   res.render("Cookie", { MANITO: id });
 });
 
-app.get("/cookie_confirm", (req, res) => {
+app.get("host/cookie_confirm", (req, res) => {
   (async () => {
     const my_manito = req.cookies.MANITO;
     console.log(my_manito);
@@ -65,7 +66,7 @@ app.get("/cookie_confirm", (req, res) => {
 });
 
 /*send_message*/
-app.post("/send_message", (req, res) => {
+app.post("host/send_message", (req, res) => {
   console.log(req.body.message);
   const message = req.body.message;
   if (message.length >= 1) {
