@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 // const VueCookies = require("vue-cookies");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const request = require("request");
+const cors = require("cors");
 // const VSchema = require("./mdb.cjs");
 // const Counter_Schema = require("./counter_db.cjs");
 // const Board_Schema = require("./board_db.js");
@@ -17,6 +18,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
+app.use(cors());
 app.use(history());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
