@@ -53,12 +53,9 @@ export default {
     send: function () {
       console.log(this.send_message);
       axios
-        .post(
-          "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/send_message",
-          {
-            message: this.send_message,
-          }
-        )
+        .post("/send_message", {
+          message: this.send_message,
+        })
         .then((res) => {
           this.send_message = "";
           console.log(res);
