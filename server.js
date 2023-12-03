@@ -10,6 +10,10 @@ const cookieParser = require("cookie-parser");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const request = require("request");
 const cors = require("cors");
+const corsOptions = {
+  origin: "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app",
+  // Other CORS options if needed
+};
 // const VSchema = require("./mdb.cjs");
 // const Counter_Schema = require("./counter_db.cjs");
 // const Board_Schema = require("./board_db.js");
@@ -19,6 +23,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 app.use(cors());
+app.use(cors(corsOptions));
 app.use(history());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
