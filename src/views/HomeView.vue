@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       id: "",
-      pwd: "",
+      password: "",
     };
   },
   methods: {
@@ -44,7 +44,7 @@ export default {
       axios
         .post("/id", {
           id: this.id,
-          password: this.pwd,
+          password: this.password,
         })
         .then((res) => {
           if (res.data == "1") {

@@ -63,7 +63,7 @@ export default {
         this.send_message = "";
         console.log(res);
 
-        if (res.data.length >= 1) {
+        if (res.data == "1") {
           this.message_arr.push(res.data);
           console.log(res.data);
         } else {

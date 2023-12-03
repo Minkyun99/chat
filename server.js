@@ -43,9 +43,9 @@ app.use(cookieParser());
 app.post("/id", async (req, res) => {
   try {
     console.log(req.body.id);
-    console.log(req.body.pwd);
+    console.log(req.body.password);
     const id = req.body.id;
-    const pwd = req.body.pwd;
+    const pwd = req.body.password;
     if (id === "manito" && pwd === "manito1127") {
       res.send("1");
     } else {
