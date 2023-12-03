@@ -17,7 +17,9 @@
         placeholder="메시지를 입력해주세요."
         @keyup.enter="send"
       />
-      <button class="send_message_button" type="submit" @click="send"></button>
+      <button class="send_message_button" type="submit" @click="send">
+        전송
+      </button>
     </div>
   </div>
 </template>
