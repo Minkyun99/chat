@@ -293,6 +293,14 @@ app.post("/board_modal", (req, res) => {
   })();
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello, Express");
+  console.log("connected");
+
+  // HTML 파일로 응답 가능
+  res.sendFile(path.join(__dirname, "/index.html"));
+});
+
 app.listen(port, () => {
   console.log(port + "에서 서버동작 완료.");
 });
