@@ -41,13 +41,15 @@ export default {
 
   methods: {
     cookie_read: function () {
-      axios.get("/cookie_confirm").then((res) => {
+      axios.post("/cookie_confirm").then((res) => {
         this.nick = res.data;
+        console.log(this.nick);
       });
     },
 
     send: function () {
       console.log(this.send_message);
+
       axios
         .post("/send_message", {
           message: this.send_message,
