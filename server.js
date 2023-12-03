@@ -13,7 +13,6 @@ const request = require("request");
 // const Counter_Schema = require("./counter_db.cjs");
 // const Board_Schema = require("./board_db.js");
 const app = express();
-const host = "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/";
 
 const server = http.createServer(app);
 const io = new Server(server);
