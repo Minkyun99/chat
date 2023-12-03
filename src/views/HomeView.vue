@@ -12,7 +12,12 @@
         </td>
       </tr>
       <td>
-        <input type="pwd" class="pwd" v-model="password" @keyup.enter="login" />
+        <input
+          type="password"
+          class="pwd"
+          v-model="password"
+          @keyup.enter="login"
+        />
       </td>
       <tr>
         <td>
