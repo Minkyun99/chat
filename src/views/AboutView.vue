@@ -42,30 +42,36 @@ export default {
   },
 
   methods: {
-    cookie_read: function () {
-      axios.post("/cookie_confirm").then((res) => {
+    async cookie_read() {
+      try {
+        const res = await axios.post("/cookie_confirm");
         this.nick = res.data;
         console.log(this.nick);
-      });
+      } catch (error) {
+        console.error("Error fetching nickname:", error);
+      }
     },
 
-    send: function () {
-      console.log(this.send_message);
+    async send() {
+      try {
+        console.log(this.send_message);
 
-      axios
-        .post("/send_message", {
+        const res = await axios.post("/send_message", {
           message: this.send_message,
-        })
-        .then((res) => {
-          this.send_message = "";
-          console.log(res);
-          if (res.data.length >= 1) {
-            this.message_arr.push(res.data);
-            console.log(res.data);
-          } else {
-            console.log("전송실패");
-          }
         });
+
+        this.send_message = "";
+        console.log(res);
+
+        if (res.data.length >= 1) {
+          this.message_arr.push(res.data);
+          console.log(res.data);
+        } else {
+          console.log("전송실패");
+        }
+      } catch (error) {
+        console.error("Error sending message:", error);
+      }
     },
   },
 };
