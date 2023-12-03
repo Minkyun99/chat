@@ -22,6 +22,12 @@ app.use(history());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.all("/*", function (req, res, next) {
+  res.header("https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 const port = 8080;
 const _path = path.join(__dirname, "./dist");
 
