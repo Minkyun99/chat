@@ -41,7 +41,7 @@ app.set("views", "./views");
 app.use(cookieParser());
 
 /*id_pwd confirm*/
-app.post("/id", (req, res) => {
+app.post("/api/id", (req, res) => {
   console.log(req.body.id);
   console.log(req.body.pwd);
   const id = req.body.id;
@@ -56,7 +56,7 @@ app.post("/id", (req, res) => {
 });
 
 /*cookie*/
-app.post("/cookie", (req, res) => {
+app.post("/api/cookie", (req, res) => {
   const id = req.body.id;
   console.log("manito" + id);
   res.cookie("MANITO", id);
