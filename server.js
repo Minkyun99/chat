@@ -30,10 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = 8080;
 const _path = path.join(__dirname, "./dist");
 
-app.use(
-  "/https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app/",
-  express.static(_path)
-);
+app.use("/", express.static(_path));
 app.use(logger("tiny"));
 
 app.use(express.json());
@@ -43,7 +40,7 @@ app.set("views", "./views");
 app.use(cookieParser());
 
 /*id_pwd confirm*/
-app.post("/id", async (req, res) => {
+app.post("id", async (req, res) => {
   try {
     console.log(req.body);
     const id = req.body.id;
