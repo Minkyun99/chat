@@ -39,7 +39,7 @@ export default {
       axios
         .post("/id", {
           id: this.id,
-          pwd: this.pwd,
+          password: this.pwd,
         })
         .then((res) => {
           if (res.data == "1") {
