@@ -36,9 +36,6 @@ export default {
   },
   methods: {
     login: function () {
-      const promise = new Promise((resolve, reject) => {
-        reject(new Error("Something went wrong"));
-      });
       axios
         .post("/id", {
           id: this.id,
@@ -53,9 +50,6 @@ export default {
           } else {
             console.log("전송실패");
           }
-          promise.then((response) => {
-            console.log(response);
-          });
         });
 
       axios.post("/cookie", {
