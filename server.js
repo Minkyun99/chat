@@ -1,5 +1,3 @@
-require("dotenv").config();
-const { Server } = require("socket.io");
 const express = require("express");
 const history = require("connect-history-api-fallback");
 const path = require("path");
@@ -20,7 +18,6 @@ const corsOptions = {
 const app = express();
 
 const server = http.createServer(app);
-const io = new Server(server);
 
 app.use(cors(corsOptions));
 app.use(history());
