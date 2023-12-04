@@ -55,7 +55,7 @@ app.post("/id", async (req, res) => {
 });
 /*cookie*/
 app.post("/cookie", (req, res) => {
-  const id = req.body.id;
+  const id = req.body.cookie;
   console.log("manito" + id);
   res.cookie("MANITO", id);
   res.json({ MANITO: id });

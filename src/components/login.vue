@@ -1,5 +1,4 @@
 <template>
-  <chating v-if="cookie"></chating>
   <div class="login_container">
     <table class="login_table_container">
       <tr>
@@ -31,7 +30,6 @@
 
 <script>
 /* eslint-disable */
-import chating from "./components/chating.vue";
 import axios from "axios";
 export default {
   name: "app",
@@ -39,9 +37,10 @@ export default {
     return {
       id: "",
       password: "",
-      cookie: "",
+      cookie: false,
     };
   },
+
   mounted() {
     this.cookie_read();
   },
@@ -69,14 +68,15 @@ export default {
           if (res.data == "1") {
             console.log(res.data);
             alert("당신은 저의 마니또가 맞습니다.");
+            axios.post("cookie", {
+              cookie: this.id,
+            });
           } else {
             console.log("로그인 실패");
-            // Handle unsuccessful login (e.g., show an error message)
           }
         })
         .catch((error) => {
           console.error("Error during login:", error);
-          // Handle the error (e.g., show an error message to the user)
         });
     },
 
@@ -90,6 +90,9 @@ export default {
           if (res.data == "1") {
             console.log(res.data);
             alert("당신은 저의 마니또가 맞습니다.");
+            axios.post("cookie", {
+              cookie: this.id,
+            });
           } else {
             console.log("로그인 실패");
             // Handle unsuccessful login (e.g., show an error message)
@@ -101,9 +104,7 @@ export default {
         });
     },
   },
-  components: {
-    chating,
-  },
+  components: {},
 };
 </script>
 
