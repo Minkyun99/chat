@@ -24,7 +24,7 @@ app.use(history());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const port = 8080;
+const port = 443;
 const _path = path.join(__dirname, "./dist");
 
 app.use("/", express.static(_path));
