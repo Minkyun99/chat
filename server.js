@@ -11,7 +11,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 const request = require("request");
 const cors = require("cors");
 const corsOptions = {
-  origin: "https://web-chat-32updzt2alpp3tqt2.sel4.cloudtype.app",
+  origin: "*",
   // Other CORS options if needed
 };
 // const VSchema = require("./mdb.cjs");
@@ -22,7 +22,6 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.use(cors());
 app.use(cors(corsOptions));
 app.use(history());
 app.use(express.json());
